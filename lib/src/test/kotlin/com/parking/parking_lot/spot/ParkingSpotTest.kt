@@ -1,6 +1,6 @@
 package com.parking.parking_lot.spot
 
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 class ParkingSpotTest {
@@ -23,12 +23,12 @@ class ParkingSpotTest {
 
         assertEquals(false, parkingSpot.getAvailability())
     }
-    
+
     @Test
     fun `Should vacate parking spot and check its availability`() {
         val parkingSpot = ParkingSpot(1u, true)
-
         parkingSpot.occupy()
+
         parkingSpot.vacate()
 
         assertEquals(true, parkingSpot.getAvailability())
