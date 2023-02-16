@@ -7,7 +7,7 @@ data class Receipt(
     private val id: UInt,
     val entryTime: Date,
     val exitTime: Date,
-    private val fee: Int
+    private val fee: Long
 ) {
     fun getId(): UInt = id
     fun printReceipt(): String {

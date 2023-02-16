@@ -8,7 +8,7 @@ import java.util.*
 data class Ticket(
     private val id: UInt,
     private val vehicle: Vehicle,
-    private val parkingSpot: ParkingSpot,
+    val parkingSpot: ParkingSpot,
     val entryTime: Date
 ) {
     fun getId(): UInt = id

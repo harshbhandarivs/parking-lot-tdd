@@ -11,7 +11,7 @@ class ReceiptTest {
         val id = 1u
         val entryTime = Date.from(Instant.parse("2007-12-03T10:15:30.00Z"))
         val exitTime = Date.from(Instant.parse("2007-12-03T15:15:31.00Z"))
-        val fee = 100
+        val fee = 100L
 
         val receipt = Receipt(id, entryTime, exitTime, fee)
 
