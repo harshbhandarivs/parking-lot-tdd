@@ -6,8 +6,13 @@ data class ParkingSpot(
 ) {
     fun getId(): UInt = id
     fun getAvailability(): Boolean = isAvailable
+
     fun occupy() {
         isAvailable = false
+    }
+
+    fun vacate() {
+        isAvailable = true
     }
 
 }

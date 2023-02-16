@@ -23,4 +23,14 @@ class ParkingSpotTest {
 
         assertEquals(false, parkingSpot.getAvailability())
     }
+    
+    @Test
+    fun `Should vacate parking spot and check its availability`() {
+        val parkingSpot = ParkingSpot(1u, true)
+
+        parkingSpot.occupy()
+        parkingSpot.vacate()
+
+        assertEquals(true, parkingSpot.getAvailability())
+    }
 }
