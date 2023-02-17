@@ -9,6 +9,7 @@ import java.util.*
 import kotlin.math.ceil
 
 class ParkingLot(private val parkingSpots: Array<ParkingSpot> = Array(100) { ParkingSpot(it.toUInt(), true) }) {
+    private val milliSecondInHours = 3_600_000
 
     private var ticketId = 1u
     private var receiptId = 1u
@@ -35,7 +36,7 @@ class ParkingLot(private val parkingSpots: Array<ParkingSpot> = Array(100) { Par
     }
 
     private fun calculateNumberOfHours(entryTime: Date, exitTime: Date): Long {
-        return ceil((exitTime.time - entryTime.time).toDouble() / 3_600_000).toLong()
+        return ceil((exitTime.time - entryTime.time).toDouble() / milliSecondInHours).toLong()
     }
 
 }
