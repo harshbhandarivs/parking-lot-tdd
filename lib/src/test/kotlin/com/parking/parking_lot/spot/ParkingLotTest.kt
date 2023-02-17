@@ -30,7 +30,7 @@ class ParkingLotTest {
 
         val ticket = parkingLot.parkVehicle(vehicle, entryTime)
 
-        assertEquals(Ticket(1u, vehicle, parkingSpots[0], entryTime), ticket)
+        assertEquals(Ticket(1u, vehicle, parkingSpots[0].getId(), entryTime), ticket)
     }
 
     @Test

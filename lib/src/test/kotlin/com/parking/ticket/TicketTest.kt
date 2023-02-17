@@ -14,7 +14,7 @@ class TicketTest {
         val parkingSpot = ParkingSpot(1u, false)
         val entryTime = Date()
 
-        val ticket = Ticket(id, Vehicle(), parkingSpot, entryTime)
+        val ticket = Ticket(id, Vehicle(), parkingSpot.getId(), entryTime)
 
         assertEquals(id, ticket.getId())
         assertEquals(entryTime, ticket.entryTime)
@@ -26,7 +26,7 @@ class TicketTest {
         val parkingSpot = ParkingSpot(1u, false)
         val entryTime = Date.from(Instant.parse("2007-12-03T10:15:30.00Z"))
         val vehicle = Vehicle()
-        val ticket = Ticket(id, vehicle, parkingSpot, entryTime)
+        val ticket = Ticket(id, vehicle, parkingSpot.getId(), entryTime)
 
         val printTicket = ticket.printTicket()
 

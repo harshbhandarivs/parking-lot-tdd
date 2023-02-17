@@ -1,6 +1,5 @@
 package com.parking.ticket
 
-import com.parking.parking_lot.spot.ParkingSpot
 import com.parking.vehicle.Vehicle
 import java.text.SimpleDateFormat
 import java.util.*
@@ -8,7 +7,7 @@ import java.util.*
 data class Ticket(
     private val id: UInt,
     private val vehicle: Vehicle,
-    val parkingSpot: ParkingSpot,
+    val parkingSpotNumber: UInt,
     val entryTime: Date
 ) {
     fun getId(): UInt = id
@@ -18,7 +17,7 @@ data class Ticket(
         val formattedEntryTime = simpleDateFormat.format(entryTime)
         return """Parking Ticket:
             Ticket Number: $id
-            Spot Number: ${parkingSpot.getId()}
+            Spot Number: $parkingSpotNumber
             Entry Date-time: $formattedEntryTime
         """.trimMargin()
     }

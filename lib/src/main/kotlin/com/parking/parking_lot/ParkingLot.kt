@@ -16,7 +16,7 @@ class ParkingLot(private val parkingSpots: Array<ParkingSpot> = Array(100) { Par
     fun parkVehicle(vehicle: Vehicle, entryTime: Date = Date()): Ticket {
         val parkingSpot: ParkingSpot = getAvailableParkingSpot()
         parkingSpot.occupy()
-        return Ticket(ticketId++, vehicle, parkingSpot, entryTime)
+        return Ticket(ticketId++, vehicle, parkingSpot.getId(), entryTime)
     }
 
     private fun getAvailableParkingSpot(): ParkingSpot {
@@ -28,7 +28,7 @@ class ParkingLot(private val parkingSpots: Array<ParkingSpot> = Array(100) { Par
     }
 
     fun unParkVehicle(ticket: Ticket, exitTime: Date = Date()): Receipt {
-        ticket.parkingSpot.vacate()
+        parkingSpots[ticket.parkingSpotNumber.toInt()].vacate()
         val entryTime = ticket.entryTime
         val fee = calculateNumberOfHours(entryTime, exitTime) * 10
         return Receipt(receiptId++, entryTime, exitTime, fee)
