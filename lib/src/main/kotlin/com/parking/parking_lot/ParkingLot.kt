@@ -10,6 +10,7 @@ import kotlin.math.ceil
 
 class ParkingLot(private val parkingSpots: Array<ParkingSpot> = Array(100) { ParkingSpot(it.toUInt(), true) }) {
     private val milliSecondInHours = 3_600_000
+    private val perHourFee = 10
 
     private var ticketId = 1u
     private var receiptId = 1u
@@ -31,7 +32,7 @@ class ParkingLot(private val parkingSpots: Array<ParkingSpot> = Array(100) { Par
     fun unParkVehicle(ticket: Ticket, exitTime: Date = Date()): Receipt {
         parkingSpots[ticket.parkingSpotNumber.toInt()].vacate()
         val entryTime = ticket.entryTime
-        val fee = calculateNumberOfHours(entryTime, exitTime) * 10
+        val fee = calculateNumberOfHours(entryTime, exitTime) * perHourFee
         return Receipt(receiptId++, entryTime, exitTime, fee)
     }
 
