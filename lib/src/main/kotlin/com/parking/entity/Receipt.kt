@@ -1,4 +1,4 @@
-package com.parking.receipt
+package com.parking.entity
 
 import java.text.SimpleDateFormat
 import java.util.*

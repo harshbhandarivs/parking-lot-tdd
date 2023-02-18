@@ -1,4 +1,4 @@
-package com.parking.vehicle
+package com.parking.entity
 
 class Vehicle {
     val type = "CAR"
