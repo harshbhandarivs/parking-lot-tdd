@@ -1,7 +1,7 @@
-package com.parking.parking_lot.spot
+package com.parking.parking_lot
 
 import com.parking.exception.InsufficientParkingSpaceException
-import com.parking.parking_lot.ParkingLot
+import com.parking.parking_lot.spot.ParkingSpot
 import com.parking.receipt.Receipt
 import com.parking.ticket.Ticket
 import com.parking.vehicle.Vehicle
