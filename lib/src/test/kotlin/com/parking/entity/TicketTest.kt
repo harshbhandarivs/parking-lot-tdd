@@ -1,7 +1,5 @@
-package com.parking.ticket
+package com.parking.entity
 
-import com.parking.parking_lot.spot.ParkingSpot
-import com.parking.vehicle.Vehicle
 import org.junit.jupiter.api.Test
 import java.time.Instant
 import java.util.*

@@ -1,6 +1,5 @@
-package com.parking.ticket
+package com.parking.entity
 
-import com.parking.vehicle.Vehicle
 import java.text.SimpleDateFormat
 import java.util.*
 

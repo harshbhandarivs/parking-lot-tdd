@@ -1,10 +1,6 @@
-package com.parking.parking_lot
+package com.parking.entity
 
 import com.parking.exception.InsufficientParkingSpaceException
-import com.parking.parking_lot.spot.ParkingSpot
-import com.parking.receipt.Receipt
-import com.parking.ticket.Ticket
-import com.parking.vehicle.Vehicle
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import java.time.Instant

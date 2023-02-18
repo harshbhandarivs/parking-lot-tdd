@@ -1,4 +1,4 @@
-package com.parking.parking_lot.spot
+package com.parking.entity
 
 data class ParkingSpot(
     private val id: UInt,

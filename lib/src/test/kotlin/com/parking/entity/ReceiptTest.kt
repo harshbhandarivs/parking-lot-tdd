@@ -1,4 +1,4 @@
-package com.parking.receipt
+package com.parking.entity
 
 import org.junit.jupiter.api.Test
 import java.time.Instant
