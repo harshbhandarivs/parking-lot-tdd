@@ -38,10 +38,12 @@ class ParkingLotTest {
 
         assertFailsWith<InsufficientParkingSpaceException> {
             repeat(101) {
-                println(parkingLot.parkVehicle(
-                    vehicle,
-                    entryTime
-                ))
+                println(
+                    parkingLot.parkVehicle(
+                        vehicle,
+                        entryTime
+                    )
+                )
             }
         }
     }

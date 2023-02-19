@@ -4,7 +4,9 @@ import com.parking.exception.InsufficientParkingSpaceException
 import java.util.*
 import kotlin.math.ceil
 
-class ParkingLot(private val parkingSpots: Array<ParkingSpot> = Array(100) { ParkingSpot(it.toUInt(), true) }) {
+class ParkingLot(
+    private val parkingSpots: Array<ParkingSpot> = parkingSpotsInit()
+) {
     private val milliSecondInHours = 3_600_000
     private val perHourFee = 10
 
@@ -37,3 +39,5 @@ class ParkingLot(private val parkingSpots: Array<ParkingSpot> = Array(100) { Par
     }
 
 }
+
+private fun parkingSpotsInit() = Array(100) { ParkingSpot(it.toUInt(), true) }

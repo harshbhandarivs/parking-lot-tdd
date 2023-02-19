@@ -1,6 +1,5 @@
 package com.parking.entity
 
-import com.parking.entity.ParkingSpot
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
