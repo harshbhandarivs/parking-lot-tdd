@@ -11,7 +11,7 @@ class FeeCalculatorTest {
 
     @ParameterizedTest(name = "{index} => entryTime={0}, exitTime={1}, expectedFee={2}")
     @MethodSource("calculation")
-    fun `Calculate fee for given entry date and time`(entryTime: Date, exitTime: Date, expectedFee: Long) {
+    fun `Calculate fee for given entry and exit date and time`(entryTime: Date, exitTime: Date, expectedFee: Long) {
         assertEquals(expectedFee, FeeCalculator().calculateFee(entryTime, exitTime))
     }
 
