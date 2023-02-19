@@ -29,7 +29,8 @@ class ReceiptTest {
 
         val printReceipt = receipt.printReceipt()
 
-        assertEquals("""Parking Receipt:
+        assertEquals(
+            """Parking Receipt:
             Receipt Number: R-1
             Entry Date-time: 03-Dec-2007 15:45:30
             Exit Date-time: 03-Dec-2007 20:45:31
