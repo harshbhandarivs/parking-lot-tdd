@@ -4,5 +4,5 @@
 # Ignore Gradle build output directory
 build
 
-3 Ignore idea folder
+# Ignore idea folder
 .idea
