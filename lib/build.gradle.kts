@@ -31,6 +31,8 @@ dependencies {
 
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation("com.google.guava:guava:31.1-jre")
+
+    implementation("org.junit.jupiter:junit-jupiter-params:5.9.2")
 }
 
 tasks.named<Test>("test") {
