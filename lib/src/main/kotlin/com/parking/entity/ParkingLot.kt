@@ -1,14 +1,13 @@
 package com.parking.entity
 
 import com.parking.exception.InsufficientParkingSpaceException
+import com.parking.fee.FeeCalculator
 import java.util.*
-import kotlin.math.ceil
 
 class ParkingLot(
     private val parkingSpots: Array<ParkingSpot> = parkingSpotsInit()
 ) {
-    private val milliSecondInHours = 3_600_000
-    private val perHourFee = 10
+    private val feeCalculator = FeeCalculator()
 
     private var ticketId = 1u
     private var receiptId = 1u
@@ -30,12 +29,8 @@ class ParkingLot(
     fun unParkVehicle(ticket: Ticket, exitTime: Date = Date()): Receipt {
         parkingSpots[ticket.parkingSpotNumber.toInt()].vacate()
         val entryTime = ticket.entryTime
-        val fee = calculateNumberOfHours(entryTime, exitTime) * perHourFee
+        val fee = feeCalculator.calculateFee(entryTime, exitTime)
         return Receipt(receiptId++, entryTime, exitTime, fee)
-    }
-
-    private fun calculateNumberOfHours(entryTime: Date, exitTime: Date): Long {
-        return ceil((exitTime.time - entryTime.time).toDouble() / milliSecondInHours).toLong()
     }
 
 }
